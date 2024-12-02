@@ -13,6 +13,10 @@ public class Account {
         this.cliente = cliente;
     }
 
+    public void showInfo (){
+        System.out.println("Informacion de cuentas:" + getIban() + getCliente() + getSaldo());
+    }
+
     public String getIban() {
         return iban;
     }

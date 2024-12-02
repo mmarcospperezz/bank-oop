@@ -2,6 +2,7 @@ package org.ies.bank.model;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Bank {
     private String nombre;
@@ -20,6 +21,23 @@ public class Bank {
         }
     }
 
+    public Account findAccount (String iban){
+        for (Account account : cuentas){
+            if (account.getIban().equals(iban)){
+                return account;
+            }
+        }
+        return null;
+    }
+
+    public void showAccountscustomer (String nif) {
+        for (Account account : cuentas){
+            if (account.getCliente().getNif().equals(nif)){
+                account.showInfo();
+            }
+        }
+    }
+
     public Account searchIban(String iban) {
         for (Account account : cuentas) {
             if (account.getIban().equals(iban)) {
@@ -27,6 +45,16 @@ public class Bank {
             }
         }
         return null;
+    }
+
+    public void addMoney(String iban, double cantidad) {
+        Account cuenta = findAccount(iban);
+        if (cuenta != null) {
+            cuenta.setSaldo(cuenta.getSaldo() + cantidad);
+            System.out.println("Se ingresaron " + cantidad + " a la cuenta " + iban);
+        } else {
+            System.out.println("No se encuentra la cuenta con IBAN: " + iban);
+        }
     }
 
     public String getNombre() {
