@@ -57,6 +57,27 @@ public class Bank {
         }
     }
 
+    public int numberAccounts (String nif){
+        int counts = 0;
+        for (Account account: cuentas){
+            if(account.getCliente().getNif().equals(nif)){
+                counts++;
+            }
+        }
+        return counts;
+    }
+
+    public Customer returnInfo(String iban) {
+        Account cuenta = findAccount(iban);
+        if (cuenta == null){
+            return null;
+        }
+        else {
+            return cuenta.getCliente();
+        }
+
+    }
+
     public String getNombre() {
         return nombre;
     }
