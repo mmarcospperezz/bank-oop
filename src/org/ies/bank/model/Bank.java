@@ -98,6 +98,10 @@ public class Bank {
         }
     }
 
+    public void transfer (String iban1, String iban2, double amount){
+
+    }
+
     public String getNombre() {
         return nombre;
     }
