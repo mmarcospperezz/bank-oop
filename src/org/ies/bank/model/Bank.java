@@ -78,6 +78,26 @@ public class Bank {
 
     }
 
+    public void withDraw (String iban, double amount) {
+        Account account = findAccount(iban);
+        if (account != null) {
+            if (account.getSaldo() >= amount){
+                account.deposit(-amount);
+            } else {
+                System.out.println("Cuenta no encontrada");
+            }
+        }
+    }
+    public void deposit (String iban, double amount){
+        Account account = findAccount(iban);
+
+        if (account != null) {
+            account.deposit(amount);
+        } else {
+            System.out.println("Cuenta no encontrada");
+        }
+    }
+
     public String getNombre() {
         return nombre;
     }

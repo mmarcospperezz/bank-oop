@@ -13,6 +13,10 @@ public class Account {
         this.cliente = cliente;
     }
 
+    public void deposit (double amount) {
+        saldo += amount;
+    }
+
     public void showInfo (){
         System.out.println("Informacion de cuentas:" + getIban() + getCliente() + getSaldo());
     }
