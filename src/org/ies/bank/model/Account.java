@@ -17,6 +17,10 @@ public class Account {
         saldo += amount;
     }
 
+    public void retirar (double amount) {
+        saldo -= amount;
+    }
+
     public void showInfo (){
         System.out.println("Informacion de cuentas:" + getIban() + getCliente() + getSaldo());
     }

@@ -99,7 +99,13 @@ public class Bank {
     }
 
     public void transfer (String iban1, String iban2, double amount){
+        Account account1 = findAccount(iban1);
+        Account account2 = findAccount(iban2);
 
+        if (account1 != null && account2 != null) {
+            account1.retirar(amount);
+            account2.deposit(amount);
+        }
     }
 
     public String getNombre() {

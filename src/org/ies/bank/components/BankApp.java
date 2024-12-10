@@ -68,10 +68,22 @@ public class BankApp {
                 String iban = scanner.nextLine();
 
                 bank.showAccountscustomer(iban);
+
+            } else if (option == 8){
+                System.out.println("Introduce el primer IBAN");
+                String iban1 = scanner.nextLine();
+                System.out.println("Introduce el segundo IBAN");
+                String iban2 = scanner.nextLine();
+                System.out.println("¿Cuanto dinero quieres enviar?");
+                double amount = scanner.nextDouble();
+
+                bank.transfer(iban1, iban2, amount);
+
+
             } else{
                 System.out.println("Opcion invalida");
             }
-        } while (option != 8);
+        } while (option != 9);
 
 
     }
@@ -87,12 +99,14 @@ public class BankApp {
             System.out.println("5. Retirar dinero de una cuenta");
             System.out.println("6. Contar cuentas de un cliente");
             System.out.println("7. Mostrar titular de la cuenta");
-            System.out.println("8. Salir");
+            System.out.println("8. Realizar una trasferencia");
+
+            System.out.println("9. Salir");
             System.out.print("Selecciona una opción: ");
             option = scanner.nextInt();
             scanner.nextLine();
 
-        } while (option < 1 || option > 8);
+        } while (option < 1 || option > 9);
         return option;
     }
 }
