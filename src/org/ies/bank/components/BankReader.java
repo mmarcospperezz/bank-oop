@@ -16,7 +16,7 @@ public class BankReader {
     }
 
     public Bank read () {
-        System.out.println("Ingrese su nombre:");
+        System.out.println("Ingrese el nombre del banco:");
         String nombre = scanner.nextLine();
         System.out.println("¿Cuantas cuentas tiene?:");
         int size = scanner.nextInt();

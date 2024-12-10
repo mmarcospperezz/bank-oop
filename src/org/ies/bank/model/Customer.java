@@ -13,6 +13,10 @@ public class Customer {
         this.apellidos = apellidos;
     }
 
+    public void showInfo (){
+        System.out.println("Informacion de cuentas:" + getNif() + getNombre() + getApellidos());
+    }
+
     public String getNif() {
         return nif;
     }

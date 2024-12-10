@@ -103,8 +103,16 @@ public class Bank {
         Account account2 = findAccount(iban2);
 
         if (account1 != null && account2 != null) {
-            account1.retirar(amount);
-            account2.deposit(amount);
+            if (account1.getSaldo() >= amount){
+                account1.retirar(amount);
+                account2.deposit(amount);
+                System.out.println("Trasferencia realizada");
+            } else {
+                System.out.println("No hay saldo sufienciente");
+            }
+
+        } else {
+            System.out.println("No existe la cuenta");
         }
     }
 

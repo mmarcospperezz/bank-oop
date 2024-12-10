@@ -20,7 +20,6 @@ public class AccountReader {
         System.out.println("Ingrese su saldo:");
         double saldo = scanner.nextDouble();
         scanner.nextLine();
-        System.out.println("Ingrese su apellidos:");
         Customer cliente = customerReader.read();
 
         return new Account(
