@@ -9,9 +9,9 @@ import java.util.Scanner;
 public class BankApp {
 
     public final Scanner scanner;
-    public final ScannerBankReader bankReader;
+    public final BankReader bankReader;
 
-    public BankApp(Scanner scanner, ScannerBankReader bankReader) {
+    public BankApp(Scanner scanner, BankReader bankReader) {
         this.scanner = scanner;
         this.bankReader = bankReader;
     }

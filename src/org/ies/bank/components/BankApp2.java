@@ -5,9 +5,9 @@ import org.ies.bank.model.Account;
 import org.ies.bank.model.Bank;
 
 public class BankApp2 {
-    private final ScannerBankReader bankReader;
+    private final BankReader bankReader;
 
-    public BankApp2(ScannerBankReader bankReader) {
+    public BankApp2(BankReader bankReader) {
         this.bankReader = bankReader;
     }
 
